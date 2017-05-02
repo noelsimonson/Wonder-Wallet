@@ -1,19 +1,19 @@
 {
-  "name": "project2",
+  "name": "wonder-wallet",
   "version": "1.0.0",
-  "description": "Node package for project 2. Formal name TBD",
+  "description": "Personal Financial App to monitor spendings and manage budget.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EArbeitman/Project2.git"
+    "url": "git+https://github.com/EArbeitman/Wonder-Wallet.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EArbeitman/Project2/issues"
+    "url": "https://github.com/EArbeitman/Wonder-Wallet/issues"
   },
-  "homepage": "https://github.com/EArbeitman/Project2#readme"
+  "homepage": "https://github.com/EArbeitman/Wonder-Wallet#readme"
 }
