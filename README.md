@@ -1,9 +1,8 @@
-# Project Two
+# Wonder Wallet
 
 *Overview*
 
 Something something something.....
-
 
 _Branching Strategy_
 

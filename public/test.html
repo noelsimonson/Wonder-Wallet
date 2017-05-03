@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/burger_style.css">
+
+	<title>Burger Creation Page</title>
+</head>
+<body>
+
+<div class = "container">
+	<div class = "row row-centered col-fixed">
+	<div class = "well wll-lg "> 
+
+		<h2>Make a Burger</h2>
+		<form class="create-update-form" action="/" method="POST">
+
+		<div class="form-group">
+		<label for="ca">Burger Name:</label>
+		<input type="text" id="burgerName" name="name">
+		</div>
+
+		<button type="submit">Add a burger</button>
+		</form>
+
+
+	</div>
+
+	</div>
+	<div class = "row row-centered">
+		<div class = "col-xs-6 col-md-6 col-lg-6 col-centered">
+
+		<h2> burgers to eat div </h2>
+		<div class="well well-lg">
+
+		<ul>
+		  {{#each burgers}}
+		    {{#if this.devoured}}
+		      <li>
+		        {{this.burger_name}}
+
+		<!--         <form action="/{{this.id}}?_method=PUT" method="POST">
+		          <input type="hidden" name="updateBurger" value="true">
+		          <button type="submit">Update Burger</button>
+		        </form> -->
+
+		      </li>
+		    {{/if}}
+		  {{/each}}
+		</ul>
+
+
+		</div>
+
+		</div>
+
+
+
+		<div class = "col-xs-6 col-md-6 col-lg-6 col-centered">
+
+		<h2> devoured burgers </h2>
+		<div class="well well-lg">
+
+		<ul>
+		  {{#each burgers}}
+		    {{#unless this.devoured}}
+		      <li>
+		        {{this.burger_name}}
+
+		        <form action="/{{this.id}}?_method=PUT" method="POST">
+		          <input type="hidden" name="devoured" value="true">
+		          <button type="submit">Eat</button>
+		        </form>
+		      </li>
+		    {{/unless}}
+		  {{/each}}
+		</ul>
+
+
+		</div>
+
+		</div>
+
+
+	</div>
+
+</div>
+
+
+</body>
+</html>
