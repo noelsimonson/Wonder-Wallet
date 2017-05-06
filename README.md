@@ -45,6 +45,8 @@ Resources:
 
 GIT Tutorial: https://www.atlassian.com/git/tutorials
 Slick Framework: http://kenwheeler.github.io/slick/
+NodeJS Passport tutorial: https://www.youtube.com/playlist?list=PLZm85UZQLd2Q946FgnllFFMa0mfQLrYDL
+Plaid bank connection API: https://plaid.com/
 
 
 
