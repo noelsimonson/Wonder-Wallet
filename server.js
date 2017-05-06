@@ -11,8 +11,8 @@ var passport = require('passport');
 var flash = require('connect-flash');
 
 
-/*var configDB = require('./config/database.js');*/
-/*mongoose.connect(configDB.url);*/
+var configDB = require('./config/database.js');
+mongoose.connect(configDB.url);
 require('./config/passport')(passport);
 
 app.use(morgan('dev'));
@@ -32,7 +32,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 app.set('view engine', 'ejs');
 
 
-require('./app/routes.js')(app, passport);
+require('./controllers/routes.js')(app, passport);
 
 app.listen(port);
 console.log('Server running on port: ' + port);
