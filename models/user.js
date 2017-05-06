@@ -1,11 +1,11 @@
-var env = process.env.NODE_ENV || 'development';
-var config = require(__dirname + '/../../config/config.json')[env];
+var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
-/*var userSchema = config.Schema({
+var userSchema = mongoose.Schema({
 	local: {
 		username: String,
 		password: String
 	},
+
 	google: {
 		id: String,
 		token: String,
@@ -23,13 +23,3 @@ userSchema.methods.validPassword = function(password){
 }
 
 module.exports = mongoose.model('User', userSchema);
-*/
-module.exports = function(sequelize, DataTypes) {
-	var userSchema = sequelize.define("userSchema", {
-		id: DataTypes.STRING,
-		token: DataTypes.STRING,
-		email: DataTypes.STRING,
-		name: DataTypes.STRING
-	});
-	return userSchema;
-}
