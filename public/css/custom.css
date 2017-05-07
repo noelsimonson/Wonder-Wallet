@@ -1,0 +1,39 @@
+/* Dashboard page */ 
+
+/* Google font Open Sans */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+   font-family: 'Open Sans',serif;
+
+}
+.navbar-right{
+	font-size: 20px;
+
+}
+.navbar-brand {
+	font-size: 30px;
+	color: black;
+	text-align: center;
+}
+
+#networth {
+	font-weight: bolder;s
+	
+}
+
+#logo {
+	font-size: 40px;
+}
+
+.fa-google-wallet {
+	color: green;
+}
+
+.morris-area-chart-debt {
+  font: red;
+}
+
+.panel-title {
+	font-size: 20px;
+}

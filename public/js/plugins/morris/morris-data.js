@@ -1,7 +1,7 @@
 // Morris.js Charts sample data for SB Admin template
 
 $(function() {
-
+/*
     // Area Chart
     Morris.Area({
         element: 'morris-area-chart',
@@ -63,24 +63,41 @@ $(function() {
         hideHover: 'auto',
         resize: true
     });
-
-    // Donut Chart
+*/
+    // Donut Chart Assets
     Morris.Donut({
-        element: 'morris-donut-chart',
+        element: 'morris-area-chart-assets',
         data: [{
-            label: "Download Sales",
+            label: "Savings",
             value: 12
         }, {
-            label: "In-Store Sales",
+            label: "Investments",
             value: 30
         }, {
-            label: "Mail-Order Sales",
+            label: "Real Estate",
             value: 20
         }],
         resize: true
     });
 
+// Donut Chart Debt
+    Morris.Donut({
+        element: 'morris-area-chart-debt',
+        colors: ["#FF0000", "#ff6666", "#800000", "#ff8080", "#ffb3b3"],
+        data: [{
+            label: "Credit Cards",
+            value: 12
+        }, {
+            label: "Mortgage",
+            value: 30
+        }, {
+            label: "School Loans",
+            value: 20
+        }],
+        resize: true
+    });
     // Line Chart
+    /*
     Morris.Line({
         // ID of the element in which to draw the chart.
         element: 'morris-line-chart',
@@ -221,7 +238,9 @@ $(function() {
         xLabelAngle: 35,
         hideHover: 'auto',
         resize: true
-    });
 
+    });
+ */
 
 });
+
