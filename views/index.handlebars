@@ -1,84 +1,11 @@
 <div class = "container">
 
   <div class="jumbotron">
-  <h1>Burgers!</h1>     
-    <p>Create burgers and eat them!</p>
+  <h1></h1>     
+    <p>Wonder Wallet!</p>
   </div>
 
-  <div class = "row row-centered col-fixed">
-  <div class = "well wll-lg "> 
 
-    <h2>Make a Burger</h2>
-    <form class="create-update-form" action="/" method="POST">
-
-    <div class="form-group">
-    <label for="burgerName">Burger Name:</label>
-    <input type="text" id="burgerName" name="name">
-    </div>
-
-    <button type="submit">Add a burger</button>
-    </form>
-
-
-  </div>
-
-  </div>
-  <div class = "row row-centered">
-    <div class = "col-xs-6 col-md-6 col-lg-6 col-centered">
-
-      <div class="well well-lg">
-      <h2>Burgers I ate</h2>
-
-      <ul>
-        {{#each burgers}}
-          {{#if this.devoured}}
-            <li>
-              {{this.burger_name}}
-
-{{!--               <form action="/{{this.id}}?_method=PUT" method="POST">
-                <input type="text" name="burgerName">
-                <button type="submit">Update Burger</button>
-              </form> --}} 
-
-            </li>
-          {{/if}}
-        {{/each}}
-      </ul>
-
-
-      </div> <!-- end well -->
-
-    </div> <!-- end column -->
-
-
-
-    <div class = "col-xs-6 col-md-6 col-lg-6 col-centered">
-
-      <div class="well well-lg">
-      <h2>Burgers to Eat</h2>
-
-      <ul>
-        {{#each burgers}}
-          {{#unless this.devoured}}
-            <li>
-              {{this.burger_name}}
-
-              <form action="/{{this.id}}?_method=PUT" method="POST">
-                <input type="hidden" name="devoured" value="true">
-                <button type="submit">Eat</button>
-              </form>
-            </li>
-          {{/unless}}
-        {{/each}}
-      </ul>
-
-
-      </div> <!-- end well div -->
-
-    </div> <!-- end col -->
-
-
-  </div> <!-- end row -->
 
 </div>
 
