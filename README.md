@@ -45,6 +45,8 @@ Resources:
 
 GIT Tutorial: https://www.atlassian.com/git/tutorials
 Slick Framework: http://kenwheeler.github.io/slick/
+Morris Charts: http://morrisjs.github.io/morris.js/
+Animate CSS: https://github.com/daneden/animate.css
 
 
 
