@@ -34,6 +34,13 @@ app.set('view engine', 'ejs');
 
 require('./controllers/routes.js')(app, passport);
 
+
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
+
+// Static directory
+app.use(express.static("public"));
+
 app.listen(port);
 console.log('Server running on port: ' + port);
 

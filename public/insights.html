@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Wonder Wallet</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+  
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+      
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    </li>
+                    <li>
+                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                    </li>
+                    <li>
+                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                    </li>
+                    <li>
+                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                    </li>
+                    <li>
+                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="insights.html"><i class="fa fa-fw fa-file"></i> insights</a>
+                    </li>
+                    <li>
+                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        <!-- </nav> -->
+ 
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Insights <small>Spending Overview</small>
+                        </h1>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alert alert-info alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <i class="fa fa-info-circle"></i>  <strong>Budget</strong> Try out <a href="http://startbootstrap.com/template-overviews/sb-admin-2" class="alert-link">SB Admin 2</a> for additional features!
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                 <!-- /.row -->               
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                        <div class="panel-heading"> <h3 class="panel-title">
+                                   Charts
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="barChart">
+                                          </div>
+                                <div class="text-right">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+  <!--                               <div class="col-lg-6 col-lg-offset-5">
+  -->                                   <div class="btn-group btn-group-justified" role="group" aria-label="timeframe">
+                                      <div class="btn-group" role="group">
+                                        <button type="button" id = "one" class="btn btn-default text-center active" aria-pressed="true">1mo</button>
+                                      </div>
+                                      <div class="btn-group" role="group">
+                                        <button type="button" id = "two" class="btn btn-default">2mo</button>
+                                      </div>
+                                      <div class="btn-group" id = "three" role="group">
+                                        <button type="button" class="btn btn-default">3mo</button>
+                                      </div>
+                                      <div class="btn-group" id = "six" role="group">
+                                        <button type="button" class="btn btn-default">6mo</button>
+                                      </div>
+                                       <div class="btn-group" id = "year" role="group">
+                                        <button type="button" class="btn btn-default">1yr</button>
+                                      <!-- </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div id="pieChart">
+                                          </div>
+                                <div class="text-right">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <!-- /.row -->
+                <div class = "row">
+                    <div class="col-lg-12 panel panel-default" >
+                      <div class="panel-body" id = "summary" style="max-height: 20">
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Order #</th>
+                                                <th>Order Date</th>
+                                                <th>Order Time</th>
+                                                <th>Amount (USD)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>3326</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:29 PM</td>
+                                                <td>$321.33</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3325</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:20 PM</td>
+                                                <td>$234.34</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3324</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:03 PM</td>
+                                                <td>$724.17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3323</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:00 PM</td>
+                                                <td>$23.71</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3322</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:49 PM</td>
+                                                <td>$8345.23</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3321</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:23 PM</td>
+                                                <td>$245.12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3320</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:15 PM</td>
+                                                <td>$5663.54</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3319</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:13 PM</td>
+                                                <td>$943.45</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-right">
+                                    <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+   <!--  <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="../data/flot-data.js"></script>
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    --> <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.1.1.js"></script> -->
+<script type="text/javascript">
+
+// push month digits into an array for display on x axis for barchart
+function pushMo(monthToAdd, repeat, monthArr){
+     for (var i = repeat; i > 0; i-- ){
+          monthArr.push(monthToAdd);
+          console.log("line 255 " + monthToAdd + " " + monthArr);
+          monthToAdd++;
+        }
+}
+
+
+function getAvg(avgArr, inputArr){
+    var avg = 0;
+    for (var i = 0; i < inputArr.length; i++){
+         avg += inputArr[i];
+    }
+    avg = avg/inputArr.length;
+     for (var i = 0; i < inputArr.length; i++){
+         avgArr.push(avg);
+    }   
+}
+
+
+function barchart(){
+    var d = new Date();
+    var currentMo = d.getMonth() + 1;
+    var monthArr = [];
+    var incomeArr = [6,7,5,8,6,7];
+    var expenseArr = [4,3,5,2,3,4];
+    var avgArr = [];
+ 
+    // Get the average of expenses over the period for display in line plot
+    getAvg(avgArr, expenseArr);
+
+    // Populate the array with the last 6 months to be displayed on x-axis
+    // if the current month is April or earlier, push months from previous years first and then push current years months
+    if (currentMo<6) {
+        pushMo(12 - 6 + currentMo + 1, 6 - currentMo, monthArr);
+        pushMo(1, currentMo, monthArr);
+    } else {
+        // the current month is later than April so push 6 months from the current year
+        pushMo(currentMo - 6 + 1, 6, monthArr);       
+    }
+    // establish an array to store chart colors
+   var colors =[];
+   // use Highcharts to display bar chart with expenses and income
+     Highcharts.chart('barChart', {
+  title: {
+        text: 'Net Spending'
+    },
+    colors: ['#cbf390', '#b0c0d6', 'black'],
+    xAxis: {
+        categories: monthArr
+    },
+    labels: {
+        items: [{
+            // html: 'Total fruit consumption',
+            style: {
+                left: '50px',
+                top: '18px',
+                color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+            }
+        }]
+    },
+    plotOptions: {
+                column: {
+                    pointPadding: -.2,
+                    borderWidth: 0
+                }
+            },
+    series: [{
+        type: 'column',
+        name: 'Income',
+        data: incomeArr,
+       color: colors[0]
+    }, {
+        type: 'column',
+        name: 'Expenses',
+        data: expenseArr,
+        color: colors[1]
+    }, {
+        type: 'spline',
+        name: 'Average',
+        data: avgArr,
+        marker: {
+            enabled: false,
+            lineWidth: 2,
+            lineColor: Highcharts.getOptions().colors[2],
+            fillColor: 'black'
+        }
+    }]
+});
+}
+
+function getPieData(data){
+ return data =  [{
+                name: 'Microsoft Internet Explorer',
+                y: 56.33
+            }, {
+                name: 'Chrome',
+                y: 24.03
+            }, {
+                name: 'Firefox',
+                y: 10.38
+            }, {
+                name: 'Safari',
+                y: 4.77
+            }, {
+                name: 'Opera',
+                y: 0.91
+            }, {
+                name: 'Proprietary or Undetectable',
+                y: 0.2
+            }]
+}
+
+
+function piechart(){
+    var pieData = getPieData();
+    console.log(pieData);
+  Highcharts.chart('pieChart', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie',
+            marginRight: 300
+
+        },
+        // title: {
+        //     text: 'Browser market shares January, 2015 to May, 2015'
+        // },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false
+                },
+                showInLegend: true
+            }
+        },
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'right',
+            layout: 'vertical',
+            x: -20,
+            y: 50,
+            marker: {
+                symbol: 'square',
+                radius : 12
+            //     symbolHeight: 12,
+            //     symbolWidth: 12,
+            //     symbolRadius: 6
+            },
+            itemStyle: {
+                 fontSize: '17px',
+                 font: 'Trebuchet MS, Verdana, sans-serif'
+              }
+        },
+        series: [{
+            name: 'Expenses',
+            colorByPoint: true,
+            data: pieData
+        }]
+    });
+}
+
+function displayNet(){
+    var netInc = 5000;
+    var netExp = 3450;
+    var net =   netInc - netExp;
+    $('#summary').text('Total Income    -    Total Expenses   =    Bottom Line').attr('class', 'netTitle');   
+    $('#summary').append('<br>');
+    $('#summary').append("$" + netInc + " - " + "$" + netExp + " = " + "$" + net);
+}
+
+     barchart();
+     piechart();
+     displayNet();
+
+
+</script>
+</html>
