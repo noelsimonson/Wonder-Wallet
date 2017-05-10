@@ -1,7 +1,7 @@
 // Morris.js Charts sample data for SB Admin template
 
 $(function() {
-/*
+
     // Area Chart
     Morris.Area({
         element: 'morris-area-chart',
@@ -63,7 +63,7 @@ $(function() {
         hideHover: 'auto',
         resize: true
     });
-*/
+/*
     // Donut Chart Assets
     Morris.Donut({
         element: 'morris-area-chart-assets',
@@ -97,7 +97,7 @@ $(function() {
         resize: true
     });
     // Line Chart
-    /*
+    
     Morris.Line({
         // ID of the element in which to draw the chart.
         element: 'morris-line-chart',
@@ -240,7 +240,7 @@ $(function() {
         resize: true
 
     });
- */
+*/
 
 });
 

@@ -4,6 +4,9 @@ module.exports = function(app, passport){
 	app.get('/', function(req, res){
 		res.render('./layouts/index.ejs');
 	});
+	app.get('/dashboard', isLoggedIn, function(req, res){
+		res.render('./layouts/dashboard.ejs', { user: req.user });
+	});
 	app.get('/insights', isLoggedIn, function(req, res){
 		res.render('./layouts/insights.ejs', { user: req.user });
 	});
