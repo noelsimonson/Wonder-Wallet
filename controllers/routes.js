@@ -1,4 +1,5 @@
 var User = require('../models/user');
+var plaid = require('../config/credentials.js');
 
 module.exports = function(app, passport){
 	app.get('/', function(req, res){
@@ -12,7 +13,7 @@ module.exports = function(app, passport){
 		res.render('./layouts/login.ejs', { message: req.flash('loginMessage') });
 	});
 	app.post('/login', passport.authenticate('local-login', {
-		successRedirect: '/dashboard',
+		successRedirect: '/profile',
 		failureRedirect: '/login',
 		failureFlash: true
 	}));
@@ -29,12 +30,16 @@ module.exports = function(app, passport){
 	}));
 
 	app.get('/profile', isLoggedIn, function(req, res){
-		res.render('./layouts/profile.ejs', { user: req.user });
+		res.render('./layouts/profile.ejs', 
+			{ user: req.user,    
+				PLAID_PUBLIC_KEY: plaid.plaidKeys.plaid_public_key,
+    			PLAID_ENV: plaid.plaidKeys.plaid_env, 
+    		});
 	});
 
-	app.get('/dashboard', isLoggedIn, function(req, res){
-		res.render('./layouts/dashboard.ejs', { user: req.user });
-	});
+	// app.get('/dashboard', isLoggedIn, function(req, res){
+	// 	res.render('./layouts/dashboard.ejs', { user: req.user });
+	// });
 
 	app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 
