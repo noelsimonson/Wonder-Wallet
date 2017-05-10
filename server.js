@@ -33,6 +33,7 @@ app.set('view engine', 'ejs');
 
 
 require('./controllers/routes.js')(app, passport);
+require('./controllers/plaidhelper.js')(app);
 
 
 // app.engine("handlebars", exphbs({ defaultLayout: "main" }));
