@@ -12,7 +12,7 @@ module.exports = function(app, passport){
 		res.render('./layouts/login.ejs', { message: req.flash('loginMessage') });
 	});
 	app.post('/login', passport.authenticate('local-login', {
-		successRedirect: '/profile',
+		successRedirect: '/dashboard',
 		failureRedirect: '/login',
 		failureFlash: true
 	}));
@@ -32,16 +32,14 @@ module.exports = function(app, passport){
 		res.render('./layouts/profile.ejs', { user: req.user });
 	});
 
-	app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email']}));
-
-	app.get('/auth/facebook/callback', 
-	  passport.authenticate('facebook', { successRedirect: '/profile',
-	                                      failureRedirect: '/' }));
+	app.get('/dashboard', isLoggedIn, function(req, res){
+		res.render('./layouts/dashboard.ejs', { user: req.user });
+	});
 
 	app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 
 	app.get('/auth/google/callback', 
-	  passport.authenticate('google', { successRedirect: '/profile',
+	  passport.authenticate('google', { successRedirect: '/dashboard',
 	                                      failureRedirect: '/' }));
 
 
