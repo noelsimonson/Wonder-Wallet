@@ -1,9 +1,10 @@
 var User = require('../models/user');
-var plaid = require('../config/credentials.js');
+
+var plaidClient = require('../config/plaidConnection.js');
 
 module.exports = function(app, passport){
 	app.get('/', function(req, res){
-		res.render('./layouts/index.ejs');
+		res.render('./layouts/index.ejs')
 	});
 	app.get('/insights', isLoggedIn, function(req, res){
 		res.render('./layouts/insights.ejs', { user: req.user });
@@ -32,14 +33,10 @@ module.exports = function(app, passport){
 	app.get('/profile', isLoggedIn, function(req, res){
 		res.render('./layouts/profile.ejs', 
 			{ user: req.user,    
-				PLAID_PUBLIC_KEY: plaid.plaidKeys.plaid_public_key,
-    			PLAID_ENV: plaid.plaidKeys.plaid_env, 
+				PLAID_PUBLIC_KEY: plaidClient.client.public_key,
+    			PLAID_ENV: 'sandbox', 
     		});
 	});
-
-	// app.get('/dashboard', isLoggedIn, function(req, res){
-	// 	res.render('./layouts/dashboard.ejs', { user: req.user });
-	// });
 
 	app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 

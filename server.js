@@ -22,22 +22,17 @@ app.use(session({secret: 'anystringoftext',
 				 saveUninitialized: true,
 				 resave: true}));
 
+app.use(bodyParser.json());
+
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 
-
-
 app.set('view engine', 'ejs');
 
-
 require('./controllers/routes.js')(app, passport);
-require('./controllers/plaidhelper.js')(app);
-
-
-// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-// app.set("view engine", "handlebars");
+require('./controllers/plaid-routes.js')(app);
 
 // Static directory
 app.use(express.static("public"));
