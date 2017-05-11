@@ -43,12 +43,14 @@ You can reconsile merge conflicts by validating the changes with a partner.
 
 Resources:
 
-GIT Tutorial: https://www.atlassian.com/git/tutorials
-Slick Framework: http://kenwheeler.github.io/slick/
-Morris Charts: http://morrisjs.github.io/morris.js/
-Animate CSS: https://github.com/daneden/animate.css
-NodeJS Passport tutorial: https://www.youtube.com/playlist?list=PLZm85UZQLd2Q946FgnllFFMa0mfQLrYDL
-Plaid bank connection API: https://plaid.com/
+* GIT Tutorial: https://www.atlassian.com/git/tutorials
+* Slick Framework: http://kenwheeler.github.io/slick/
+* Morris Charts: http://morrisjs.github.io/morris.js/
+* Animate CSS: https://github.com/daneden/animate.css
+* NodeJS Passport tutorial: https://www.youtube.com/playlist?list=PLZm85UZQLd2Q946FgnllFFMa0mfQLrYDL
+* Plaid bank connection API: https://plaid.com/
+* Font Awesome: http://fontawesome.io/
+* Hover CSS: http://ianlunn.github.io/Hover/
 
 
 
