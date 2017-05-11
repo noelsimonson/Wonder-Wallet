@@ -26,11 +26,16 @@
     <!--- Custom CSS -->
     <link href="css/custom.css" rel="stylesheet">
     
-    <!--- animate text css ---->
+    <!--- animate text css --->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     <!---Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!--Highcharts -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -97,7 +102,24 @@
                     </div>
                 </div>
 
-                <!--donut chart assets -->
+
+                <!--graph chart -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Assets vs Debt</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="morris-bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <!--Juan nixed the donut charts -->
+                <!--donut chart assets 
               
                         <div class="col-md-6">
                         <div class="panel panel-default">
@@ -114,8 +136,8 @@
                     
                     </div>
             
-            <!-- panel with acount tabbed left and transactions panes to go here -->
-                    <!--donut chart debt -->
+                    donut chart debt -->
+                    <!---
                   <div class="col-md-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -131,6 +153,8 @@
                     </div>
                 </div>
             </div>
+            -->
+
                 <!-- /.row -->
 
                 <div class="row">
@@ -218,20 +242,7 @@
                 </div>
                 <!-- /.row -->                
 
-             <!--graph chart 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-area-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 /.row -->
+             
 
                 <!-- to-do panel, might use later
                     <div class="col-lg-4">
@@ -280,8 +291,8 @@
                             </div>
                         </div>
                     </div>
-
                     -->
+                     <!-- panel with acount tabbed left and transactions panes to go here -->
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -379,6 +390,103 @@
     <script src="js/plugins/morris/morris.min.js"></script>
     <script src="js/plugins/morris/morris-data.js"></script>
 
+    
+
 </body>
+<script type="text/javascript">
+
+// push month digits into an array for display on x axis for barchart
+function pushMo(monthToAdd, repeat, monthArr){
+     for (var i = repeat; i > 0; i-- ){
+          monthArr.push(monthToAdd);
+          console.log("line 255 " + monthToAdd + " " + monthArr);
+          monthToAdd++;
+        }
+}
+
+
+function getAvg(avgArr, inputArr){
+    var avg = 0;
+    for (var i = 0; i < inputArr.length; i++){
+         avg += inputArr[i];
+    }
+    avg = avg/inputArr.length;
+     for (var i = 0; i < inputArr.length; i++){
+         avgArr.push(avg);
+    }   
+}
+
+
+function barchart(){
+    var d = new Date();
+    var currentMo = d.getMonth() + 1;
+    var monthArr = [];
+    var incomeArr = [6,7,5,8,6,7];
+    var expenseArr = [4,3,5,2,3,4];
+    var avgArr = [];
+ 
+    // Get the average of expenses over the period for display in line plot
+    getAvg(avgArr, expenseArr);
+
+    // Populate the array with the last 6 months to be displayed on x-axis
+    // if the current month is April or earlier, push months from previous years first and then push current years months
+    if (currentMo<6) {
+        pushMo(12 - 6 + currentMo + 1, 6 - currentMo, monthArr);
+        pushMo(1, currentMo, monthArr);
+    } else {
+        // the current month is later than April so push 6 months from the current year
+        pushMo(currentMo - 6 + 1, 6, monthArr);       
+    }
+    // establish an array to store chart colors
+   var colors =[];
+   // use Highcharts to display bar chart with expenses and income
+     Highcharts.chart('barChart', {
+  title: {
+        text: 'Net Spending'
+    },
+    colors: ['#cbf390', '#b0c0d6', 'black'],
+    xAxis: {
+        categories: monthArr
+    },
+    labels: {
+        items: [{
+            // html: 'Total fruit consumption',
+            style: {
+                left: '50px',
+                top: '18px',
+                color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+            }
+        }]
+    },
+    plotOptions: {
+                column: {
+                    pointPadding: -.2,
+                    borderWidth: 0
+                }
+            },
+    series: [{
+        type: 'column',
+        name: 'Income',
+        data: incomeArr,
+       color: colors[0]
+    }, {
+        type: 'column',
+        name: 'Expenses',
+        data: expenseArr,
+        color: colors[1]
+    }, {
+        type: 'spline',
+        name: 'Average',
+        data: avgArr,
+        marker: {
+            enabled: false,
+            lineWidth: 2,
+            lineColor: Highcharts.getOptions().colors[2],
+            fillColor: 'black'
+        }
+    }]
+});
+}
+
 
 </html>
