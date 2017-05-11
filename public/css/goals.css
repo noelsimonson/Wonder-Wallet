@@ -1,0 +1,14 @@
+.progress {
+  position:relative;
+  height:30px;
+}
+.raised {
+  position:absolute;
+  left:10px;
+  top:4px;
+}
+.goal {
+  position:absolute;
+  right:10px;
+  top:4px;
+}

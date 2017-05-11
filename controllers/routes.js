@@ -37,9 +37,17 @@ module.exports = function(app, passport){
     		});
 	});
 
-	// app.get('/dashboard', isLoggedIn, function(req, res){
-	// 	res.render('./layouts/dashboard.ejs', { user: req.user });
-	// });
+	app.get('/dashboard', isLoggedIn, function(req, res){
+		res.render('./layouts/dashboard.ejs', { user: req.user });
+	});
+
+	app.get('/goals', isLoggedIn, function(req, res){
+		res.render('./layouts/goals.ejs', { user: req.user });
+	});
+
+	app.get('/dashboard', isLoggedIn, function(req, res){
+		res.render('./layouts/dashboard.ejs', { user: req.user });
+	});
 
 	app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 
