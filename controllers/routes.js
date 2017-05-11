@@ -5,18 +5,47 @@ module.exports = function(app, passport){
 	app.get('/', function(req, res){
 		res.render('./layouts/index.ejs');
 	});
+<<<<<<< HEAD
 	app.get('/home', function(req, res){
 		res.render('./layouts/home.ejs');
 	});
+=======
+
+>>>>>>> 2f993abaa2fbf474099d5e076f4162fb65bbfacf
 	app.get('/dashboard', isLoggedIn, function(req, res){
 		res.render('./layouts/dashboard.ejs', { user: req.user });
-	});
-	app.get('/insights', isLoggedIn, function(req, res){
-		res.render('./layouts/insights.ejs', { user: req.user });
-	});
+	}); 
 
-	app.get('/login', function(req, res){
-		res.render('./layouts/login.ejs', { message: req.flash('loginMessage') });
+	app.get('/insights',  function(req, res){
+
+		var account = [
+			{ name: 'checking',
+			  data: [1000, 3300, 4244, 5858, 9999, 2726]
+			},
+			{ name: 'Plaid Credit',
+			  data: [1050, 300, 244, 588, 999, 226]
+			}
+			 ];
+		var categories = [
+			{ name: 'Entertainment',
+			  total: 400		
+			},
+			{ name: 'Groceries',
+			  total: 2000	
+			},
+			{ name: 'Mortgage',
+			  total: 4000	
+			},
+			{ name: 'Utilities',
+			  total: 100	
+			}
+			];
+	    res.render('./layouts/insights.ejs', 
+			{ user: req.user,
+			  account: account,
+			  categories: categories
+	
+	            })
 	});
 	app.post('/login', passport.authenticate('local-login', {
 		successRedirect: '/profile',
@@ -43,9 +72,23 @@ module.exports = function(app, passport){
     		});
 	});
 
+<<<<<<< HEAD
 	// app.get('/dashboard', isLoggedIn, function(req, res){
 	// 	res.render('./layouts/dashboard.ejs', { user: req.user });
 	// });
+=======
+	app.get('/dashboard', isLoggedIn, function(req, res){
+		res.render('./layouts/dashboard.ejs', { user: req.user });
+	});
+
+	app.get('/goals', isLoggedIn, function(req, res){
+		res.render('./layouts/goals.ejs', { user: req.user });
+	});
+
+	app.get('/dashboard', isLoggedIn, function(req, res){
+		res.render('./layouts/dashboard.ejs', { user: req.user });
+	});
+>>>>>>> 2f993abaa2fbf474099d5e076f4162fb65bbfacf
 
 	app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 

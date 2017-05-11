@@ -17,7 +17,7 @@ var rss = require('node-feedparser')
 var configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
 require('./config/passport')(passport);
-
+ 
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: false}));
