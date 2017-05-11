@@ -9,12 +9,15 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash = require('connect-flash');
+var rss = require('node-feedparser')
+
+
 
 
 var configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
 require('./config/passport')(passport);
-
+ 
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: false}));
