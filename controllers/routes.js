@@ -5,13 +5,9 @@ module.exports = function(app, passport){
 	app.get('/', function(req, res){
 		res.render('./layouts/index.ejs');
 	});
-<<<<<<< HEAD
 	app.get('/home', function(req, res){
 		res.render('./layouts/home.ejs');
 	});
-=======
-
->>>>>>> 2f993abaa2fbf474099d5e076f4162fb65bbfacf
 	app.get('/dashboard', isLoggedIn, function(req, res){
 		res.render('./layouts/dashboard.ejs', { user: req.user });
 	}); 
@@ -72,11 +68,11 @@ module.exports = function(app, passport){
     		});
 	});
 
-<<<<<<< HEAD
+
 	// app.get('/dashboard', isLoggedIn, function(req, res){
 	// 	res.render('./layouts/dashboard.ejs', { user: req.user });
 	// });
-=======
+
 	app.get('/dashboard', isLoggedIn, function(req, res){
 		res.render('./layouts/dashboard.ejs', { user: req.user });
 	});
@@ -84,11 +80,6 @@ module.exports = function(app, passport){
 	app.get('/goals', isLoggedIn, function(req, res){
 		res.render('./layouts/goals.ejs', { user: req.user });
 	});
-
-	app.get('/dashboard', isLoggedIn, function(req, res){
-		res.render('./layouts/dashboard.ejs', { user: req.user });
-	});
->>>>>>> 2f993abaa2fbf474099d5e076f4162fb65bbfacf
 
 	app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 
