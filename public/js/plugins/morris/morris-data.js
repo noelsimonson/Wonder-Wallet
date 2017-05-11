@@ -1,7 +1,7 @@
 // Morris.js Charts sample data for SB Admin template
 
 $(function() {
-
+/*
     // Area Chart
     Morris.Area({
         element: 'morris-area-chart',
@@ -208,7 +208,7 @@ $(function() {
         smooth: false,
         resize: true
     });
-
+*/
     // Bar Chart
     Morris.Bar({
         element: 'morris-bar-chart',
@@ -240,7 +240,6 @@ $(function() {
         resize: true
 
     });
-*/
 
 });
 
