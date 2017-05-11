@@ -29,6 +29,7 @@
     "mongoose": "^4.9.8",
     "morgan": "^1.8.1",
     "mysql": "^2.13.0",
+    "node-feedparser": "^1.0.1",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-google-oauth": "^1.0.0",
