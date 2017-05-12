@@ -1,6 +1,10 @@
 var User = require('../models/user');
 
+
 var plaidClient = require('../config/plaidConnection.js');
+
+var data = require('../models/bankdata');
+
 
 module.exports = function(app, passport){
 	app.get('/', function(req, res){
@@ -11,34 +15,22 @@ module.exports = function(app, passport){
 		res.render('./layouts/dashboard.ejs', { user: req.user });
 	}); 
 
-	app.get('/insights',  function(req, res){
-
-		var account = [
-			{ name: 'checking',
-			  data: [1000, 3300, 4244, 5858, 9999, 2726]
-			},
-			{ name: 'Plaid Credit',
-			  data: [1050, 300, 244, 588, 999, 226]
-			}
-			 ];
-		var categories = [
-			{ name: 'Entertainment',
-			  total: 400		
-			},
-			{ name: 'Groceries',
-			  total: 2000	
-			},
-			{ name: 'Mortgage',
-			  total: 4000	
-			},
-			{ name: 'Utilities',
-			  total: 100	
-			}
-			];
+	app.get('/insights/:mo', isLoggedIn, function(req, res){
 	    res.render('./layouts/insights.ejs', 
 			{ user: req.user,
-			  account: account,
-			  categories: categories
+			  account: data.account,
+			  categories: data.categories,
+			  transactions: data.transactions
+	
+	            })
+	});
+	app.get('/insights', isLoggedIn, function(req, res){
+
+	    res.render('./layouts/insights.ejs', 
+			{ user: req.user,
+			  account: data.account,
+			  categories: data.categories,
+			  transactions: data.transactions
 	
 	            })
 	});

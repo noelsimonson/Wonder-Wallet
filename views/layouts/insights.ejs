@@ -65,7 +65,7 @@
                 <ul class="nav navbar-nav navbar-right">
                 <i class="fi-lightbulb"></i>
                   <!-- <li class="active"><a href="/dashboard">Dashboard</a></li> -->
-                  <li><a href="insights">Insights</a></li>
+                  <li><a href="dashboard">Dashboard</a></li>
                   <li><a href="#">Contact</a></li>
                     </ul>
                   </li>
@@ -84,7 +84,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h2 class="page-header">
-                            <i class="fa fa-dashboard"></i> Insights: <%=user%>
+                            <i class="fa fa-dashboard"></i> Insights: <%=user.google.name%>
                              <!-- <small>Overview</small> -->
                         </h1>
                     </div>
@@ -131,7 +131,7 @@
                  <!-- /.row -->  
 
                <div class="row">             
-                    <div class="col-lg-4">
+                    <div class="col-lg-6">
                         <div class="panel panel-default">
                         <div class="panel-heading"> <h3 class="panel-title">
                                   Expenses by Account
@@ -154,23 +154,21 @@
                                     <div class="col-lg-1
                                     ">
                                       <div class="btn-group" role="group">
-                                        <button type="button" id = "one" class="btn btn-default text-center active" aria-pressed="true">1mo</button>
+                                        <button type="button" id = "one" class="btn btn-default text-center active" aria-pressed="true"><a href="insights/1">1mo</a></button>
                                       </div>
                                     </div>
                                     <div class="col-lg-1">
                                       <div class="btn-group" role="group">
-                                        <button type="button" id = "two" class="btn btn-default">2mo</button>
+                                        <button type="button" id = "two" class="btn btn-default"><a href="insights/2">2mo</a></button>
                                       </div>
                                     </div>
                                     <div class="col-lg-1">
-                                      <div class="btn-group" id = "three" role="group">
-                                        <button type="button" class="btn btn-default">3mo</button>
+                                      <div class="btn-group"  role="group">
+                                        <button type="button" id = "three" class="btn btn-default"><a href="insights/1">3mo</a></button>
                                       </div>
                                     </div>
                                    <div class="col-lg-3">
                                        <div class="btn-group" id = "range" role="group">
-                                      <!--   <button type="button" class="btn btn-default">1yr</button> -->
-                                      <!-- </div> -->
                                        <input class="pull-right btn btn-default" type="text" name="daterange" />
                                     </div>
                                   </div>
@@ -178,7 +176,7 @@
                             </div>
                             <div class="panel-body">
                                 <div id="pieChart">
-                                          </div>
+                                </div>
                                 <div class="text-right">
                                    
                                 </div>
@@ -192,75 +190,37 @@
                     <div class="col-lg-12 panel <div class="col-lg-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel</h3>
+                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions</h3>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-hover table-striped">
+                                    <table class="table table-bordered table-hover table-striped table-fixed">
                                         <thead>
                                             <tr>
-                                                <th>Order #</th>
+                                                <th>Account</th>
                                                 <th>Order Date</th>
-                                                <th>Order Time</th>
+                                                <th>Name</th>
                                                 <th>Amount (USD)</th>
+                                                <th>Order Time</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <% transactions.forEach(function(transactions) { %>
                                             <tr>
-                                                <td>3326</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:29 PM</td>
-                                                <td>$321.33</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3325</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:20 PM</td>
-                                                <td>$234.34</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3324</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:03 PM</td>
-                                                <td>$724.17</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3323</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:00 PM</td>
-                                                <td>$23.71</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3322</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:49 PM</td>
-                                                <td>$8345.23</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3321</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:23 PM</td>
-                                                <td>$245.12</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3320</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:15 PM</td>
-                                                <td>$5663.54</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3319</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:13 PM</td>
-                                                <td>$943.45</td>
-                                            </tr>
+                                                <td><%=transactions.account%></td>
+                                                <td><%=transactions.date%></td>
+                                                 <td><%=transactions.name%></td>
+                                               
+                                                
+                                                <td>$<%=transactions.amount%></td>
+                                                <td><%=transactions.category%></td>
+                                                
+                                            </tr> 
+                                          <% }); %>
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="text-right">
-                                    <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
+                              </div>
                         </div>
 
                     </div>
@@ -278,27 +238,15 @@
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
- 
-
-    <!-- Bootstrap Core JavaScript -->
-
-
-    <!-- Morris Charts JavaScript -->
-<!--     <script src="js/plugins/morris/raphael.min.js"></script>
-    <script src="js/plugins/morris/morris.min.js"></script>
-    <script src="js/plugins/morris/morris-data.js"></script> -->
-<!--     <script src="js/plugins/flot/jquery.flot.pie.js"></script>
-    <script src="../data/flot-data.js"></script>
-    <script src="js/plugins/flot/jquery.flot.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script> -->
 </body>
-<!-- <script src="https://code.jquery.com/jquery-3.1.1.js"></script> -->
+    <!-- jQuery -->
 <script src="js/jquery.js"></script>
+
+  <!-- Daterange required scripts -->
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+
+  <!-- Beginning of custom javascript -->
 <script type="text/javascript">
 
 // push month digits into an array for display on x axis for barchart
@@ -311,14 +259,9 @@ function pushMo(monthToAdd, repeat, monthArr){
 }
 
 
-function getAvg(avgArr, inputArr){
-    var avg = 0;
-    for (var i = 0; i < inputArr.length; i++){
-         avg += inputArr[i];
-    }
-
-    avg = avg/inputArr.length;
-     for (var i = 0; i < inputArr.length; i++){
+function getAvg(total, avgArr, months){
+    var avg = total/months;
+     for (var i = 0; i <=months; i++){
          avgArr.push(avg);
     }   
 }
@@ -328,22 +271,23 @@ function barchart(){
     var d = new Date();
     var currentMo = d.getMonth() + 1;
     var monthArr = [];
-    var checking = [6,7,5,8,6,7];
-    var  creditcard = [4,3,5,2,3,4];
     var avgArr = [];
     var bardata = [];
-    var monthlyexp = [];
-    var i = 1;
+    var totalexp = 0;
+    var i = 0;
+    var monthsDisplay = 6;
 
-        if (currentMo<6) {
-        pushMo(12 - 6 + currentMo + 1, 6 - currentMo, monthArr);
-        pushMo(1, currentMo, monthArr);
+    // Populate the array with the last 6 months to be displayed on x-axis
+    // if the current month is April or earlier, push months from previous years first and then push current years months
+    if (currentMo<monthsDisplay) {
+      pushMo(12 - monthsDisplay + currentMo + 1, monthsDisplay - currentMo, monthArr);
+    pushMo(1, currentMo, monthArr);
     } else {
         // the current month is later than April so push 6 months from the current year
-        pushMo(currentMo - 6 + 1, 6, monthArr);       
+        pushMo(currentMo - monthsDisplay + 1, monthsDisplay, monthArr);       
     }
     // establish an array to store chart colors
-   var colors =[];
+   var  colors = ['#cbf390', '#b0c0d6', '#f7a35c', '#318174', 'black'];
  <% account.forEach(function(account) { %>
   var name = '<%=account.name%>';
   var total = [<%=account.data%>];
@@ -357,32 +301,34 @@ function barchart(){
             color: colors[i]
         });
         i++;
-  
+        for (var t=0; t<total.length; t++){
+          totalexp += total[0];
+        }
+
     <% }); %>
   
- 
+   // Get the average of expenses over the period for display in line plot
+   getAvg(totalexp, avgArr, monthsDisplay);
    bardata.push({
         type: 'spline',
         name: 'Average Expenses',
-        data: 2000,
-        // data: avgArr,
+        data: avgArr,
         marker: {
             enabled: false,
             lineWidth: 2,
-            lineColor: Highcharts.getOptions().colors[0],
+            lineColor: '#000000',
             fillColor: 'black'
         }
       });
       console.log(JSON.stringify(bardata));
-    // Populate the array with the last 6 months to be displayed on x-axis
-    // if the current month is April or earlier, push months from previous years first and then push current years months
+
 
    // use Highcharts to display bar chart with expenses and income
   Highcharts.chart('barChart', {
   title: {
         text: 'Expenses'
     },
-    colors: ['black', '#cbf390', '#b0c0d6', '#f7a35c'],
+    colors: ['#cbf390', '#b0c0d6', '#f7a35c', '#318174', 'black'],
     xAxis: {
         categories: monthArr
     },
@@ -425,8 +371,16 @@ function getPieData(){
 
 
 function piechart(){
+  // get data for piechart from JSON 
     var pieData = getPieData();
     console.log(pieData);
+
+   // display daterange selector in pie chart
+   $(function() {
+          $('input[name="daterange"]').daterangepicker();
+      });
+
+   // display pie chart with Highcharts
   Highcharts.chart('pieChart', {
         chart: {
             plotBackgroundColor: null,
@@ -462,17 +416,17 @@ function piechart(){
             marker: {
                 symbol: 'square',
                 radius : 12
-            //     symbolHeight: 12,
-            //     symbolWidth: 12,
-            //     symbolRadius: 6
             },
+            labelFormatter: function () {
+            return this.name + ":    $" + this.y;
+            },  
             itemStyle: {
                  fontSize: '12px',
                  font: 'Trebuchet MS, Verdana, sans-serif'
               }
         },
         series: [{
-            name: 'Expenses',
+            name: 'Expense',
             colorByPoint: true,
             data: pieData
         }]
@@ -480,6 +434,7 @@ function piechart(){
 }
 
 function displayNet(){
+  // display net data for this account
     var netInc = 5000;
     var netExp = 3450;
     var net =   netInc - netExp;
@@ -487,17 +442,15 @@ function displayNet(){
     
     $('#income').append("$" + netInc);
     $('#expenses').append("$" + netExp);
-      $('#bottom').append("$" + net);
+    $('#bottom').append("$" + net);
 }
 
-     barchart();
-     piechart();
-     displayNet();
+ barchart();
+ piechart();
+ displayNet();
 
 
-   $(function() {
-          $('input[name="daterange"]').daterangepicker();
-      });
+ // $(document).on('click', '.item', function(event) {
 
 
 </script>
