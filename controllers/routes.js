@@ -1,10 +1,8 @@
 var User = require('../models/user');
 
-
 var plaidClient = require('../config/plaidConnection.js');
 
 var data = require('../models/bankdata');
-
 
 module.exports = function(app, passport){
 	app.get('/', function(req, res){
@@ -47,7 +45,6 @@ module.exports = function(app, passport){
 	app.get('/login', function(req, res){
 		res.render('./layouts/login.ejs', { message: req.flash('signupMessage') });
 	});
-
 
 	app.post('/signup', passport.authenticate('local-signup', {
 		successRedirect: '/login',
