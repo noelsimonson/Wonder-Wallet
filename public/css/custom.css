@@ -1,3 +1,9 @@
+/* home page */
+
+body.home {
+  background-size: cover;
+}
+
 /* Dashboard page */ 
 
 /* Google font Open Sans */
