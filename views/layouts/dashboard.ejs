@@ -34,7 +34,8 @@
 
     <!--Highcharts -->
     <script src="http://code.highcharts.com/highcharts.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<!--     <script type="text/javascript" src = "js/plaidbuttons.js"></script> -->
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -69,6 +70,28 @@
           <li class="active"><a href="#">Dashboard</a></li>
           <li><a href="#">Insights</a></li>
           <li><a href="#">Contact</a></li>
+
+          <!-- plaid buttons -->
+          <div id="app">
+            <div class="box">
+              <button id="get-accounts-btn">Get Accounts</button>
+              <div id="get-accounts-data"></div>
+            </div>
+
+            <div class="box">
+              <button id="get-item-btn">Get Item</button>
+              <div id="upgrade-to-connect-data" class="inner"></div>
+            </div>
+
+            <div class="box" id="txnBox">
+              <button id="get-transaction-data">Get Transactions</button>
+              <div id="get-transactions-data"></div>
+            </div>
+          </div>
+
+        <!-- end plaid buttons -->
+
+          </li>
             </ul>
           </li>
         </ul>
@@ -381,6 +404,7 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+    <script src="js/plaidbuttons.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
