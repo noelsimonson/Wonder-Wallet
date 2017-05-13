@@ -63,11 +63,8 @@
                         <h1>
                         <i class="fa fa-google-wallet animated fadeInRightBig" aria-hidden="true"></i>onder <br>
                          &nbsp; &nbsp; <i class="fa fa-google-wallet animated fadeInRightBig" aria-hidden="true"></i>allet</h1>
-<<<<<<< HEAD
                         <h3>Control all your accounts and assets in one dashboard</h3>
-=======
-                        <h3>One Stop Shop to Manage Your Money!</h3>
->>>>>>> 219e9c765fb4877f20e38c018d8ceb5ca2bc3662
+
                         <hr class="intro-divider">
                                 <button id = 'link-btn'  class="btn btn-lg btn-success hvr-pulse"><span class="glyphicon glyphicon-circle-arrow-right"></span> Start</button>               
                     </div>
@@ -97,8 +94,7 @@
       to your console.
     </p> -->
 
-    <button id="link-btn">Link Account</button>
-  </div>
+  
     <!-- /.intro-header -->  
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -132,16 +128,20 @@
           $('#container').fadeOut('fast', function() {
             $('#intro').hide();
             $('#app, #steps').fadeIn('slow');
-            if (linked) {window.location.href = "/dashboard";} 
+            console.log(linked + 'line 131 home');
+            if (linked) {window.location.href = "dashboard";} 
           });
-
+          console.log(linked + 'line 134 home');
+            if (linked) {window.location.href = "dashboard";} 
         });
 
       },
     });
     $('#link-btn').on('click', function(e) {
+      $('#link-btn').addClass('.disabled');
       linked = true;
       handler.open();
+                console.log(linked + 'line 143 home');
      });
     var accessToken = getParameterByName('access_token');
     if (accessToken != null) {
@@ -153,6 +153,8 @@
           $('#app, #steps').fadeIn('slow');
         });
       });
+                console.log(linked + 'line 155 home');
+            if (linked) {window.location.href = "dashboard";} 
     }
   })(jQuery);
 
