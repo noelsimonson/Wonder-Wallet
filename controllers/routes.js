@@ -22,6 +22,10 @@ module.exports = function(app, passport){
 		res.render('./layouts/dashboard.ejs', { user: req.user });
 	}); 
 
+	app.get('/profile', isLoggedIn, function(req, res){
+		res.render('./layouts/profile.ejs', { user: req.user });
+	}); 
+
 	app.get('/insights/:mo', isLoggedIn, function(req, res){
 	    res.render('./layouts/insights.ejs', 
 			{ user: req.user,
