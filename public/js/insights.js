@@ -181,6 +181,7 @@ function displayNet(){
      barchart();
      piechart();
      displayNet();
+     console.log("arr" + <%=aname%>);
 
 </script>
 </html>

@@ -63,7 +63,7 @@
               </div>
               <div id="navbar2" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                <i class="fi-lightbulb"></i>
+  
                   <!-- <li class="active"><a href="/dashboard">Dashboard</a></li> -->
                   <li><a href="dashboard">Dashboard</a></li>
                   <li><a href="#">Contact</a></li>
@@ -84,7 +84,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h2 class="page-header">
-                            <i class="fa fa-dashboard"></i> Insights: <%=user.google.name%>
+                           <i class="icon-lightbulb"></i> 
+                            Insights: <%=user.google.name%>
                              <!-- <small>Overview</small> -->
                         </h1>
                     </div>
@@ -205,18 +206,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <% transactions.forEach(function(transactions) { %>
-                                            <tr>
-                                                <td><%=transactions.account%></td>
-                                                <td><%=transactions.date%></td>
-                                                 <td><%=transactions.name%></td>
-                                               
-                                                
-                                                <td>$<%=transactions.amount%></td>
-                                                <td><%=transactions.category%></td>
-                                                
-                                            </tr> 
-                                          <% }); %>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -241,6 +231,8 @@
 </body>
     <!-- jQuery -->
 <script src="js/jquery.js"></script>
+ 
+    <script src="js/plaidcall.js"></script>
 
   <!-- Daterange required scripts -->
 <script src="js/bootstrap.min.js"></script>
@@ -253,7 +245,7 @@
 function pushMo(monthToAdd, repeat, monthArr){
      for (var i = repeat; i > 0; i-- ){
           monthArr.push(monthToAdd);
-          console.log("line 255 " + monthToAdd + " " + monthArr);
+          // console.log("line 255 " + monthToAdd + " " + monthArr);
           monthToAdd++;
         }
 }
@@ -291,8 +283,8 @@ function barchart(){
  <% account.forEach(function(account) { %>
   var name = '<%=account.name%>';
   var total = [<%=account.data%>];
-  console.log(name);
-  console.log(total);
+  // console.log(name);
+  // console.log(total);
    bardata.push(
           {
             type: 'column',
@@ -320,7 +312,7 @@ function barchart(){
             fillColor: 'black'
         }
       });
-      console.log(JSON.stringify(bardata));
+      // console.log(JSON.stringify(bardata));
 
 
    // use Highcharts to display bar chart with expenses and income
