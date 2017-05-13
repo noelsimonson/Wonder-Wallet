@@ -1,3 +1,5 @@
+/* to be deleted */
+
 module.exports = function(app){
 
 	var envvar = require('envvar');
