@@ -1,16 +1,20 @@
 /* home page */
 
-body.home {
-  background-size: cover;
-}
 
 /* Dashboard page */ 
+
+/* index page */
+
+p {
+    color: #000000;
+}
 
 /* Google font Open Sans */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 body {
    font-family: 'Open Sans',serif;
+   background-color: #ffffff;
 
 }
 .navbar-right{
