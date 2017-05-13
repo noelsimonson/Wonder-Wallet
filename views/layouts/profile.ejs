@@ -81,7 +81,11 @@
         }, function() {
           $('#container').fadeOut('fast', function() {
             $('#intro').hide();
-            $('#app, #steps').fadeIn('slow');
+            $('#app, #steps').fadeIn('slow', 
+            	$.get('/dashboard'), function(){
+            		//window.location.href = '/dashboard';
+            		console.log("did something");
+            	});
           });
         });
       },
@@ -102,7 +106,6 @@
         });
       });
     }
-
 
   })(jQuery);
   </script>
