@@ -1,10 +1,19 @@
 const envvar = require('envvar');
 const plaid = require('plaid');
 
+<<<<<<< HEAD
 //var PLAID_CLIENT_ID = envvar.string('PLAID_CLIENT_ID');
 //var PLAID_SECRET = envvar.string('PLAID_SECRET');
 //var PLAID_PUBLIC_KEY = envvar.string('PLAID_PUBLIC_KEY');
 //var PLAID_ENV = envvar.string('PLAID_ENV', 'sandbox');
+=======
+
+// var PLAID_CLIENT_ID = envvar.string('PLAID_CLIENT_ID');
+// var PLAID_SECRET = envvar.string('PLAID_SECRET');
+// var PLAID_PUBLIC_KEY = envvar.string('PLAID_PUBLIC_KEY');
+// var PLAID_ENV = envvar.string('PLAID_ENV', 'sandbox');
+
+>>>>>>> 219e9c765fb4877f20e38c018d8ceb5ca2bc3662
 
 var PLAID_CLIENT_ID = '5907a8f6bdc6a458a5a63ade';
 var PLAID_SECRET = '087361ead1dc6b3db7ffa7875f1035';

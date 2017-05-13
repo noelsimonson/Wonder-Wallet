@@ -22,6 +22,10 @@ module.exports = function(app, passport){
 		res.render('./layouts/dashboard.ejs', { user: req.user });
 	}); 
 
+	app.get('/profile', isLoggedIn, function(req, res){
+		res.render('./layouts/profile.ejs', { user: req.user });
+	}); 
+
 	app.get('/insights/:mo', isLoggedIn, function(req, res){
 	    res.render('./layouts/insights.ejs', 
 			{ user: req.user,
@@ -80,7 +84,7 @@ module.exports = function(app, passport){
 	app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 
 	app.get('/auth/google/callback', 
-	  passport.authenticate('google', { successRedirect: '/dashboard',
+	  passport.authenticate('google', { successRedirect: '/home',
 	                                      failureRedirect: '/' }));
 
 
@@ -95,5 +99,5 @@ function isLoggedIn(req, res, next) {
 		return next();
 	}
 
-	res.redirect('/login');
+	
 }

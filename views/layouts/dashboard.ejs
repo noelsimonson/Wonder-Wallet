@@ -35,9 +35,13 @@
     <!--Highcharts -->
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<<<<<<< HEAD
    
    <!--hover css -->
    <link href="css/hover-min.css" rel="stylesheet">
+=======
+     <script type="text/javascript" src="js/plaidcall.js"></script>
+>>>>>>> 219e9c765fb4877f20e38c018d8ceb5ca2bc3662
 
 <!--     <script type="text/javascript" src = "js/plaidbuttons.js"></script> -->
 
@@ -276,130 +280,35 @@
                 </div>
                 <!-- /.row -->                
 
-             
-
-                <!-- to-do panel, might use later
-                    <div class="col-lg-4">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Tasks Panel</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">just now</span>
-                                        <i class="fa fa-fw fa-calendar"></i> Calendar updated
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">4 minutes ago</span>
-                                        <i class="fa fa-fw fa-comment"></i> Commented on a post
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">23 minutes ago</span>
-                                        <i class="fa fa-fw fa-truck"></i> Order 392 shipped
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">46 minutes ago</span>
-                                        <i class="fa fa-fw fa-money"></i> Invoice 653 has been paid
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">1 hour ago</span>
-                                        <i class="fa fa-fw fa-user"></i> A new user has been added
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">2 hours ago</span>
-                                        <i class="fa fa-fw fa-check"></i> Completed task: "pick up dry cleaning"
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">yesterday</span>
-                                        <i class="fa fa-fw fa-globe"></i> Saved the world
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">two days ago</span>
-                                        <i class="fa fa-fw fa-check"></i> Completed task: "fix error on sales page"
-                                    </a>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    -->
                      <!-- panel with acount tabbed left and transactions panes to go here -->
-                    <div class="col-lg-12">
+                  <div class = "row">
+                    <div class="col-lg-12 panel <div class="col-lg-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel</h3>
+                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions</h3>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-hover table-striped">
+                                    <table class="table table-bordered table-hover table-striped table-fixed">
                                         <thead>
                                             <tr>
-                                                <th>Order #</th>
+                                                <th>Account</th>
                                                 <th>Order Date</th>
-                                                <th>Order Time</th>
+                                                <th>Name</th>
                                                 <th>Amount (USD)</th>
+                                                <th>Category</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>3326</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:29 PM</td>
-                                                <td>$321.33</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3325</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:20 PM</td>
-                                                <td>$234.34</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3324</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:03 PM</td>
-                                                <td>$724.17</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3323</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:00 PM</td>
-                                                <td>$23.71</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3322</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:49 PM</td>
-                                                <td>$8345.23</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3321</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:23 PM</td>
-                                                <td>$245.12</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3320</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:15 PM</td>
-                                                <td>$5663.54</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3319</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:13 PM</td>
-                                                <td>$943.45</td>
-                                            </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="text-right">
-                                    <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
+                              </div>
                         </div>
+
+                    </div>
+    
                     </div>
                 </div>
                 <!-- /.row -->
@@ -416,7 +325,6 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <!-- <script src="js/plaidbuttons.js"></script> -->
-
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
@@ -428,100 +336,9 @@
     
 
 </body>
+
 <script type="text/javascript">
 
-// push month digits into an array for display on x axis for barchart
-function pushMo(monthToAdd, repeat, monthArr){
-     for (var i = repeat; i > 0; i-- ){
-          monthArr.push(monthToAdd);
-          console.log("line 255 " + monthToAdd + " " + monthArr);
-          monthToAdd++;
-        }
-}
-
-
-function getAvg(avgArr, inputArr){
-    var avg = 0;
-    for (var i = 0; i < inputArr.length; i++){
-         avg += inputArr[i];
-    }
-    avg = avg/inputArr.length;
-     for (var i = 0; i < inputArr.length; i++){
-         avgArr.push(avg);
-    }   
-}
-
-
-function barchart(){
-    var d = new Date();
-    var currentMo = d.getMonth() + 1;
-    var monthArr = [];
-    var incomeArr = [6,7,5,8,6,7];
-    var expenseArr = [4,3,5,2,3,4];
-    var avgArr = [];
- 
-    // Get the average of expenses over the period for display in line plot
-    getAvg(avgArr, expenseArr);
-
-    // Populate the array with the last 6 months to be displayed on x-axis
-    // if the current month is April or earlier, push months from previous years first and then push current years months
-    if (currentMo<6) {
-        pushMo(12 - 6 + currentMo + 1, 6 - currentMo, monthArr);
-        pushMo(1, currentMo, monthArr);
-    } else {
-        // the current month is later than April so push 6 months from the current year
-        pushMo(currentMo - 6 + 1, 6, monthArr);       
-    }
-    // establish an array to store chart colors
-   var colors =[];
-   // use Highcharts to display bar chart with expenses and income
-     Highcharts.chart('barChart', {
-  title: {
-        text: 'Net Spending'
-    },
-    colors: ['#cbf390', '#b0c0d6', 'black'],
-    xAxis: {
-        categories: monthArr
-    },
-    labels: {
-        items: [{
-            // html: 'Total fruit consumption',
-            style: {
-                left: '50px',
-                top: '18px',
-                color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
-            }
-        }]
-    },
-    plotOptions: {
-                column: {
-                    pointPadding: -.2,
-                    borderWidth: 0
-                }
-            },
-    series: [{
-        type: 'column',
-        name: 'Income',
-        data: incomeArr,
-       color: colors[0]
-    }, {
-        type: 'column',
-        name: 'Expenses',
-        data: expenseArr,
-        color: colors[1]
-    }, {
-        type: 'spline',
-        name: 'Average',
-        data: avgArr,
-        marker: {
-            enabled: false,
-            lineWidth: 2,
-            lineColor: Highcharts.getOptions().colors[2],
-            fillColor: 'black'
-        }
-    }]
-});
-}
 
 
 </html>
