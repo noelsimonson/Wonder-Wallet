@@ -155,17 +155,17 @@
                                     <div class="col-lg-1
                                     ">
                                       <div class="btn-group" role="group">
-                                        <button type="button" id = "one" class="btn btn-default text-center active" aria-pressed="true"><a href="insights/1">1mo</a></button>
+                                        <button type="button" id = "one" class="btn btn-default .btn-primary text-center active" aria-pressed="true"><a href="insights/1">1mo</a></button>
                                       </div>
                                     </div>
                                     <div class="col-lg-1">
                                       <div class="btn-group" role="group">
-                                        <button type="button" id = "two" class="btn btn-default"><a href="insights/2">2mo</a></button>
+                                        <button type="button" id = "two" class="btn btn-default .btn-primary .disabled"><a href="insights/2">2mo</a></button>
                                       </div>
                                     </div>
                                     <div class="col-lg-1">
                                       <div class="btn-group"  role="group">
-                                        <button type="button" id = "three" class="btn btn-default"><a href="insights/1">3mo</a></button>
+                                        <button type="button" id = "three" class="btn btn-default .btn-primary .disabled"><a href="insights/1">3mo</a></button>
                                       </div>
                                     </div>
                                    <div class="col-lg-3">
@@ -202,7 +202,7 @@
                                                 <th>Order Date</th>
                                                 <th>Name</th>
                                                 <th>Amount (USD)</th>
-                                                <th>Order Time</th>
+                                                <th>Category</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -232,7 +232,7 @@
     <!-- jQuery -->
 <script src="js/jquery.js"></script>
  
-    <script src="js/plaidcall.js"></script>
+<script src="js/plaidcall.js"></script>
 
   <!-- Daterange required scripts -->
 <script src="js/bootstrap.min.js"></script>
@@ -367,10 +367,7 @@ function piechart(){
     var pieData = getPieData();
     console.log(pieData);
 
-   // display daterange selector in pie chart
-   $(function() {
-          $('input[name="daterange"]').daterangepicker();
-      });
+  
 
    // display pie chart with Highcharts
   Highcharts.chart('pieChart', {
@@ -436,7 +433,10 @@ function displayNet(){
     $('#expenses').append("$" + netExp);
     $('#bottom').append("$" + net);
 }
-
+ // display daterange selector in pie chart
+   $(function() {
+          $('input[name="daterange"]').daterangepicker();
+      });
  barchart();
  piechart();
  displayNet();

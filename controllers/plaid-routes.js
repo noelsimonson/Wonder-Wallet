@@ -33,6 +33,7 @@ module.exports = function(app) {
     response.json({
       'error': false
     });
+    res.render('./layouts/dashboard.ejs', { user: req.user });
   });
 
   app.get('/accounts', function(request, response, next) {
@@ -99,7 +100,7 @@ module.exports = function(app) {
     //webHooks.trigger('shortname1', 200, {data: 123})
 
     // Pull transactions for the Item for the last 30 days
-    var startDate = moment().subtract(10, 'days').format('YYYY-MM-DD');
+    var startDate = moment().subtract(60, 'days').format('YYYY-MM-DD');
     var endDate = moment().format('YYYY-MM-DD');
     plaidClient.client.getTransactions(ACCESS_TOKEN, startDate, endDate, {
       count: 50,
