@@ -17,16 +17,21 @@
   },
   "homepage": "https://github.com/EArbeitman/Wonder-Wallet#readme",
   "dependencies": {
-    "body-parser": "^1.17.1",
     "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.6",
+    "envar": "^2.0.0",
     "envvar": "^1.1.0",
     "express": "^4.15.2",
     "express-session": "^1.15.2",
+    "feedparser": "^2.2.0",
     "moment": "^2.18.1",
+    "mongoose": "^4.9.8",
     "morgan": "^1.8.1",
     "mysql": "^2.13.0",
+    "node-feedparser": "^1.0.1",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-google-oauth": "^1.0.0",
@@ -34,6 +39,5 @@
     "plaid": "^2.0.4",
     "rss-parser": "^2.7.0",
     "sequelize": "^3.30.4"
-
   }
 }

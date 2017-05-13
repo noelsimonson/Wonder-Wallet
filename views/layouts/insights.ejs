@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Wonder Wallet</title>
+
+     <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!--- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+    
+    <!-- - animate text css - -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!---Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+   <script src="http://code.highcharts.com/highcharts.js"></script>
+  
+     <!--- Date Range Picker -->
+
+      <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  
+      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+</head>
+
+<body>
+
+      <div class="container-fluid">
+            <div class="jumbotron jumbotron-fluid">
+         <div class="container">
+         <div class="container example2">
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <div id="logo">
+                <i class="fa fa-google-wallet animated fadeInRightBig" aria-hidden="true"></i>onder <br> &nbsp; &nbsp; <i class="fa fa-google-wallet animated fadeInRightBig" aria-hidden="true"></i>allet
+              </div>
+              </div>
+              <div id="navbar2" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+  
+                  <!-- <li class="active"><a href="/dashboard">Dashboard</a></li> -->
+                  <li><a href="dashboard">Dashboard</a></li>
+                  <li><a href="#">Contact</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+          </nav>
+</div>
+     <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="page-header">
+                           <i class="icon-lightbulb"></i> 
+                            Insights: <%=user.google.name%>
+                             <!-- <small>Overview</small> -->
+                        </h1>
+                    </div>
+                </div>
+                <!-- /.row -->
+               <h2>
+                  <div class="alert alert-success">             
+                    <div class="row" id = "summary">
+                        <div class="col-lg-12" >
+  
+                            <div class = "col-lg-1" >
+                            <i class="fa fa-money" aria-hidden="true"></i>
+                            </div>
+                            <div class = "col-lg-3" >
+                            Total Income
+                            </div>
+                            <div class = "col-lg-1">-
+                             </div>
+                            <div class = "col-lg-3">  Total Expenses
+                            </div>
+                           <div class = "col-lg-1">=
+                           </div>
+                           <div class = "col-lg-3">Bottom Line
+                            </div>
+                        </div>
+                      </div>
+                  <div class="row" id = "summary">
+                    <div class="col-lg-12" >
+                            <div class = "col-lg-3 col-lg-offset-1 text-center" id = "income">
+                             </div>
+                             <div class = "col-lg-1">-
+                             </div>
+                             <div class = "col-lg-3 text-center" id = "expenses">  
+                            </div>
+                            <div class = "col-lg-1">=
+                           </div>
+                           <div class = "col-lg-3 text-center" id = "bottom">
+                            </div>
+                        </div>
+                      </div>
+                      </div>
+                    </h2>
+                 <!-- /.row - end of summary-->
+                 <!-- /.row -->  
+
+               <div class="row">             
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                        <div class="panel-heading"> <h3 class="panel-title">
+                                  Expenses by Account
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="barChart">
+                                          </div>
+                                <div class="text-right">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                 <div class="btn-group btn-group-justified" role="group" aria-label="timeframe">
+                                    <div class="col-lg-1
+                                    ">
+                                      <div class="btn-group" role="group">
+                                        <button type="button" id = "one" class="btn btn-default text-center active" aria-pressed="true"><a href="insights/1">1mo</a></button>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-1">
+                                      <div class="btn-group" role="group">
+                                        <button type="button" id = "two" class="btn btn-default"><a href="insights/2">2mo</a></button>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-1">
+                                      <div class="btn-group"  role="group">
+                                        <button type="button" id = "three" class="btn btn-default"><a href="insights/1">3mo</a></button>
+                                      </div>
+                                    </div>
+                                   <div class="col-lg-3">
+                                       <div class="btn-group" id = "range" role="group">
+                                       <input class="pull-right btn btn-default" type="text" name="daterange" />
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div id="pieChart">
+                                </div>
+                                <div class="text-right">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <!-- /.row -->
+                <div class = "row">
+                    <div class="col-lg-12 panel <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped table-fixed">
+                                        <thead>
+                                            <tr>
+                                                <th>Account</th>
+                                                <th>Order Date</th>
+                                                <th>Name</th>
+                                                <th>Amount (USD)</th>
+                                                <th>Order Time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                              </div>
+                        </div>
+
+                    </div>
+    
+                    </div>
+                </div>
+
+                   <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+</body>
+    <!-- jQuery -->
+<script src="js/jquery.js"></script>
+ 
+    <script src="js/plaidcall.js"></script>
+
+  <!-- Daterange required scripts -->
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+
+  <!-- Beginning of custom javascript -->
+<script type="text/javascript">
+
+// push month digits into an array for display on x axis for barchart
+function pushMo(monthToAdd, repeat, monthArr){
+     for (var i = repeat; i > 0; i-- ){
+          monthArr.push(monthToAdd);
+          // console.log("line 255 " + monthToAdd + " " + monthArr);
+          monthToAdd++;
+        }
+}
+
+
+function getAvg(total, avgArr, months){
+    var avg = total/months;
+     for (var i = 0; i <=months; i++){
+         avgArr.push(avg);
+    }   
+}
+
+
+function barchart(){
+    var d = new Date();
+    var currentMo = d.getMonth() + 1;
+    var monthArr = [];
+    var avgArr = [];
+    var bardata = [];
+    var totalexp = 0;
+    var i = 0;
+    var monthsDisplay = 6;
+
+    // Populate the array with the last 6 months to be displayed on x-axis
+    // if the current month is April or earlier, push months from previous years first and then push current years months
+    if (currentMo<monthsDisplay) {
+      pushMo(12 - monthsDisplay + currentMo + 1, monthsDisplay - currentMo, monthArr);
+    pushMo(1, currentMo, monthArr);
+    } else {
+        // the current month is later than April so push 6 months from the current year
+        pushMo(currentMo - monthsDisplay + 1, monthsDisplay, monthArr);       
+    }
+    // establish an array to store chart colors
+   var  colors = ['#cbf390', '#b0c0d6', '#f7a35c', '#318174', 'black'];
+ <% account.forEach(function(account) { %>
+  var name = '<%=account.name%>';
+  var total = [<%=account.data%>];
+  // console.log(name);
+  // console.log(total);
+   bardata.push(
+          {
+            type: 'column',
+            name: name,
+            data: total,
+            color: colors[i]
+        });
+        i++;
+        for (var t=0; t<total.length; t++){
+          totalexp += total[0];
+        }
+
+    <% }); %>
+  
+   // Get the average of expenses over the period for display in line plot
+   getAvg(totalexp, avgArr, monthsDisplay);
+   bardata.push({
+        type: 'spline',
+        name: 'Average Expenses',
+        data: avgArr,
+        marker: {
+            enabled: false,
+            lineWidth: 2,
+            lineColor: '#000000',
+            fillColor: 'black'
+        }
+      });
+      // console.log(JSON.stringify(bardata));
+
+
+   // use Highcharts to display bar chart with expenses and income
+  Highcharts.chart('barChart', {
+  title: {
+        text: 'Expenses'
+    },
+    colors: ['#cbf390', '#b0c0d6', '#f7a35c', '#318174', 'black'],
+    xAxis: {
+        categories: monthArr
+    },
+    labels: {
+        items: [{
+            // html: 'Total fruit consumption',
+            style: {
+                left: '50px',
+                top: '18px',
+                color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+            }
+        }]
+    },
+    plotOptions: {
+                column: {
+                    pointPadding: -.2,
+                    borderWidth: 0
+                }
+            },
+    series: bardata
+}); 
+}
+
+function getPieData(){
+  var piedata = [];
+  <% categories.forEach(function(categories) { %>
+    var name =  '<%=categories.name%>';
+    var total = <%=categories.total%>;
+   piedata.push(
+          {
+            name: name,
+            y: total
+            
+        });
+      
+    <% }); %>
+
+      return piedata;
+}
+
+
+function piechart(){
+  // get data for piechart from JSON 
+    var pieData = getPieData();
+    console.log(pieData);
+
+   // display daterange selector in pie chart
+   $(function() {
+          $('input[name="daterange"]').daterangepicker();
+      });
+
+   // display pie chart with Highcharts
+  Highcharts.chart('pieChart', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie',
+            marginRight: 200
+
+        },
+        // title: {
+        //     text: 'Browser market shares January, 2015 to May, 2015'
+        // },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false
+                },
+                showInLegend: true
+            }
+        },
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'right',
+            layout: 'vertical',
+            x: -20,
+            y: 50,
+            marker: {
+                symbol: 'square',
+                radius : 12
+            },
+            labelFormatter: function () {
+            return this.name + ":    $" + this.y;
+            },  
+            itemStyle: {
+                 fontSize: '12px',
+                 font: 'Trebuchet MS, Verdana, sans-serif'
+              }
+        },
+        series: [{
+            name: 'Expense',
+            colorByPoint: true,
+            data: pieData
+        }]
+    });
+}
+
+function displayNet(){
+  // display net data for this account
+    var netInc = 5000;
+    var netExp = 3450;
+    var net =   netInc - netExp;
+    
+    
+    $('#income').append("$" + netInc);
+    $('#expenses').append("$" + netExp);
+    $('#bottom').append("$" + net);
+}
+
+ barchart();
+ piechart();
+ displayNet();
+
+
+ // $(document).on('click', '.item', function(event) {
+
+
+</script>
+</html>
