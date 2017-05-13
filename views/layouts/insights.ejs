@@ -31,7 +31,7 @@
 
     <!---Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-   <script src="http://code.highcharts.com/highcharts.js"></script>
+   <script src="https://code.highcharts.com/highcharts.js"></script>
   
      <!--- Date Range Picker -->
 
@@ -43,40 +43,73 @@
 </head>
 
 <body>
-
-      <div class="container-fluid">
-            <div class="jumbotron jumbotron-fluid">
-         <div class="container">
-         <div class="container example2">
-          <nav class="navbar navbar-default">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <div id="logo">
-                <i class="fa fa-google-wallet animated fadeInRightBig" aria-hidden="true"></i>onder <br> &nbsp; &nbsp; <i class="fa fa-google-wallet animated fadeInRightBig" aria-hidden="true"></i>allet
-              </div>
-              </div>
-              <div id="navbar2" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-  
-                  <!-- <li class="active"><a href="/dashboard">Dashboard</a></li> -->
-                  <li><a href="dashboard">Dashboard</a></li>
-                  <li><a href="#">Contact</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <!--/.nav-collapse -->
-            </div>
-            <!--/.container-fluid -->
-          </nav>
+<div class="container-fluid"> 
+       
+    <!-- Second navbar for categories -->
+    <nav class="nav nav-pills">
+     <div class="conatiner">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div id="logo">
+          <a class="navbar-brand" href="dashboard"><div id="logo">
+        <i class="fa fa-google-wallet animated fadeInRightBig" aria-hidden="true"></i>onder <br> &nbsp; &nbsp; <i class="fa fa-google-wallet animated fadeInRightBig" aria-hidden="true"></i>allet
+        </div>
+      </div></a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="dashboard" class="btn btn-lg hvr-underline-from-center">Dashboard</a></li>
+            <li><a href="insights" class="btn btn-lg hvr-underline-from-center">Insights</a></li>
+            <li><a href="goals" class="btn btn-lg hvr-underline-from-center">Goals</a></li>
+            <li><a href="home" class="btn btn-lg hvr-underline-from-center">Switch Account</a></li>
+            <li><a href="logout" class="btn btn-lg hvr-underline-from-center">Logout</a></li>
+            
+          </ul>
+          
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
 </div>
-     <div id="page-wrapper">
+
+          <!-- plaid buttons 
+          <div id="app">
+            <div class="box">
+              <button id="get-accounts-btn">Get Accounts</button>
+              <div id="get-accounts-data"></div>
+            </div>
+
+            <div class="box">
+              <button id="get-item-btn">Get Item</button>
+              <div id="upgrade-to-connect-data" class="inner"></div>
+            </div>
+
+            <div class="box" id="txnBox">
+              <button id="get-transaction-data">Get Transactions</button>
+              <div id="get-transactions-data"></div>
+            </div>
+          </div>
+
+        end plaid buttons -->
+
+          </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
+</div>
+      <div id="page-wrapper">
 
             <div class="container-fluid">
 
@@ -155,17 +188,17 @@
                                     <div class="col-lg-1
                                     ">
                                       <div class="btn-group" role="group">
-                                        <button type="button" id = "one" class="btn btn-default text-center active" aria-pressed="true"><a href="insights/1">1mo</a></button>
+                                        <button type="button" id = "one" class="btn btn-default .btn-primary text-center active" aria-pressed="true"><a href="insights/1">1mo</a></button>
                                       </div>
                                     </div>
                                     <div class="col-lg-1">
                                       <div class="btn-group" role="group">
-                                        <button type="button" id = "two" class="btn btn-default"><a href="insights/2">2mo</a></button>
+                                        <button type="button" id = "two" class="btn btn-default .btn-primary .disabled"><a href="insights/2">2mo</a></button>
                                       </div>
                                     </div>
                                     <div class="col-lg-1">
                                       <div class="btn-group"  role="group">
-                                        <button type="button" id = "three" class="btn btn-default"><a href="insights/1">3mo</a></button>
+                                        <button type="button" id = "three" class="btn btn-default .btn-primary .disabled"><a href="insights/1">3mo</a></button>
                                       </div>
                                     </div>
                                    <div class="col-lg-3">
@@ -202,7 +235,7 @@
                                                 <th>Order Date</th>
                                                 <th>Name</th>
                                                 <th>Amount (USD)</th>
-                                                <th>Order Time</th>
+                                                <th>Category</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -232,7 +265,7 @@
     <!-- jQuery -->
 <script src="js/jquery.js"></script>
  
-    <script src="js/plaidcall.js"></script>
+<script src="js/plaidcall.js"></script>
 
   <!-- Daterange required scripts -->
 <script src="js/bootstrap.min.js"></script>
@@ -367,10 +400,7 @@ function piechart(){
     var pieData = getPieData();
     console.log(pieData);
 
-   // display daterange selector in pie chart
-   $(function() {
-          $('input[name="daterange"]').daterangepicker();
-      });
+  
 
    // display pie chart with Highcharts
   Highcharts.chart('pieChart', {
@@ -436,13 +466,14 @@ function displayNet(){
     $('#expenses').append("$" + netExp);
     $('#bottom').append("$" + net);
 }
-
+ // display daterange selector in pie chart
+   $(function() {
+          $('input[name="daterange"]').daterangepicker();
+      });
  barchart();
  piechart();
  displayNet();
 
-
- // $(document).on('click', '.item', function(event) {
 
 
 </script>

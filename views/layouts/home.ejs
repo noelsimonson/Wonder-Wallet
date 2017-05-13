@@ -39,7 +39,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!--Highcharts -->
-    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     
     <!--hoover button effects -->
     <link href="css/hover-min.css" rel="stylesheet">
@@ -52,6 +52,7 @@
     <![endif]-->
 </head>
 <body class="home"> 
+
     <!-- Header -->
     <a name="about"></a>
     <div class="intro-header">
@@ -62,9 +63,10 @@
                         <h1>
                         <i class="fa fa-google-wallet animated fadeInRightBig" aria-hidden="true"></i>onder <br>
                          &nbsp; &nbsp; <i class="fa fa-google-wallet animated fadeInRightBig" aria-hidden="true"></i>allet</h1>
-                        <h3>amazing description here</h3>
+                        <h3>Control all your accounts and assets in one dashboard</h3>
+
                         <hr class="intro-divider">
-                                <a href="#" class="btn btn-lg btn-success hvr-pulse"><span class="glyphicon glyphicon-circle-arrow-right"></span> Start</a>                
+                                <button id = 'link-btn'  class="btn btn-lg btn-success hvr-pulse"><span class="glyphicon glyphicon-circle-arrow-right"></span> Start</button>               
                     </div>
                 </div>
             </div>
@@ -73,7 +75,7 @@
         <!-- /.container -->
     </div>
 
-      <div id="banner">
+ <!--      <div id="banner">
     <h1>Plaid Example Walkthrough</h1>
     <p id="intro">
       This is an example application that walks through integrating Plaid Link using the API to retrieve Auth and Transaction data.
@@ -90,10 +92,9 @@
       you'll be guided through an authentication process. The public_token will be passed
       back to the example server, which will then exchange it for an access token and log it
       to your console.
-    </p>
+    </p> -->
 
-    <button id="link-btn">Link Account</button>
-  </div>
+  
     <!-- /.intro-header -->  
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -103,6 +104,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
   <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
   <script>
+  var linked = false;
   function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
@@ -126,15 +128,21 @@
           $('#container').fadeOut('fast', function() {
             $('#intro').hide();
             $('#app, #steps').fadeIn('slow');
+            console.log(linked + 'line 131 home');
+            if (linked) {window.location.href = "dashboard";} 
           });
+          console.log(linked + 'line 134 home');
+            if (linked) {window.location.href = "dashboard";} 
         });
+
       },
     });
-
     $('#link-btn').on('click', function(e) {
+      $('#link-btn').addClass('.disabled');
+      linked = true;
       handler.open();
-    });
-
+                console.log(linked + 'line 143 home');
+     });
     var accessToken = getParameterByName('access_token');
     if (accessToken != null) {
       $.post('/set_access_token', {
@@ -145,10 +153,12 @@
           $('#app, #steps').fadeIn('slow');
         });
       });
+                console.log(linked + 'line 155 home');
+            if (linked) {window.location.href = "dashboard";} 
     }
-
-
   })(jQuery);
+
+
   </script>
 
 

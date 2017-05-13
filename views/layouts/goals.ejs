@@ -36,7 +36,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <!--Highcharts -->
-    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 <!--     <script type="text/javascript" src = "js/plaidbuttons.js"></script> -->
 
@@ -52,10 +52,9 @@
 
 <body>
     <div class="container-fluid">
-        <div class="jumbotron jumbotron-fluid">
+        <div class="nav nav-pills">
             <div class="container">
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
+
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2">
                               <span class="sr-only">Toggle navigation</span>
@@ -67,15 +66,18 @@
                                 <i class="fa fa-google-wallet animated fadeInRightBig" aria-hidden="true"></i>onder <br> &nbsp; &nbsp; <i class="fa fa-google-wallet animated fadeInRightBig" aria-hidden="true"></i>allet
                             </div>
                         </div>
-                        <div id="navbar2" class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="active"><a href="#">Dashboard</a></li>
-                                <li><a href="#">Insights</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
+                        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                          <ul class="nav navbar-nav navbar-right">
+                            <li><a href="dashboard" class="btn btn-lg hvr-underline-from-center">Dashboard</a></li>
+                            <li><a href="insights" class="btn btn-lg hvr-underline-from-center">Insights</a></li>
+                            <li><a href="goals" class="btn btn-lg hvr-underline-from-center">Goals</a></li>
+                            <li><a href="home" class="btn btn-lg hvr-underline-from-center">Switch Account</a></li>
+                            <li><a href="logout" class="btn btn-lg hvr-underline-from-center">Logout</a></li>
+                            
+                          </ul>
+                          
                         </div>
-                    </div>
-                </nav>
+
             </div>
         <div class="container-fluid">   
 
@@ -85,7 +87,33 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2><i class="fa fa-dashboard"></i> Goals <small>Progress Overview</small></h2>
-                    <button class="btn btn-primary ">Add new Goal</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">Add new goal</button>
+                </div>
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Add New Goal</h4>
+                            </div>
+                            <form method="post">
+                                <div class="form-group">
+                                  <label>Category</label>
+                                  <input type="text" class="form-control" name="category">
+                                </div>
+                                <div class="form-group">
+                                  <label>Amount</label>
+                                  <input type="text" class="form-control" name="amount">
+                                </div>
+
+                              </form>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="panel-body">

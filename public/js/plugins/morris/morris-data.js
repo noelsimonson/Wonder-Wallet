@@ -213,27 +213,27 @@ $(function() {
     Morris.Bar({
         element: 'morris-bar-chart',
         data: [{
-            device: 'iPhone',
-            geekbench: 136
+            device: 'December',
+            geekbench: 1150
         }, {
-            device: 'iPhone 3G',
-            geekbench: 137
+            device: 'Janurary',
+            geekbench: 1537
         }, {
-            device: 'iPhone 3GS',
-            geekbench: 275
+            device: 'February',
+            geekbench: 1275
         }, {
-            device: 'iPhone 4',
-            geekbench: 380
+            device: 'March',
+            geekbench: 1380
         }, {
-            device: 'iPhone 4S',
-            geekbench: 655
+            device: 'April',
+            geekbench: 1655
         }, {
-            device: 'iPhone 5',
-            geekbench: 1571
+            device: 'May',
+            geekbench: 1471
         }],
         xkey: 'device',
         ykeys: ['geekbench'],
-        labels: ['Geekbench'],
+        labels: ['Total Assets'],
         barRatio: 0.4,
         xLabelAngle: 35,
         hideHover: 'auto',
